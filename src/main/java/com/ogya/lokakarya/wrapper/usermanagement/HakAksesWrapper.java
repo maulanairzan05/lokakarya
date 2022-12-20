@@ -85,15 +85,15 @@ public class HakAksesWrapper {
 		this.updatedBy = updatedBy;
 	}
 	//--------------------------------------------------------------------------------------------------------
-
-
 	@Override
 	public String toString() {
 		return "HakAksesWrapper [hakAksesId=" + hakAksesId + ", userId=" + userId + ", roleId=" + roleId
 				+ ", programName=" + programName + ", createdDate=" + createdDate + ", createdBy=" + createdBy
-				+ ", updatedDate=" + updatedDate + ", updatedBy=" + updatedBy + ", getClass()=" + getClass()
-				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+				+ ", updatedDate=" + updatedDate + ", updatedBy=" + updatedBy + "]";
 	}
+
+
+	
 	
 	
 	

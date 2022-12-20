@@ -5,6 +5,7 @@ import java.util.Date;
 
 public class MenuWrapper {
 	private Long menuId;
+	private String nama;
 	private String icon;
 	private String url;
 	private String programName;
@@ -21,6 +22,15 @@ public class MenuWrapper {
 		this.menuId = menuId;
 	}
 	//--------------------------------------------------------------------------------------------------------
+
+	public String getNama() {
+		return nama;
+	}
+	public void setNama(String nama) {
+		this.nama = nama;
+	}
+	//--------------------------------------------------------------------------------------------------------
+
 
 
 
@@ -89,10 +99,12 @@ public class MenuWrapper {
 	//--------------------------------------------------------------------------------------------------------
 	@Override
 	public String toString() {
-		return "MenuWrapper [menuId=" + menuId + ", icon=" + icon + ", url=" + url + ", programName=" + programName
-				+ ", createdDate=" + createdDate + ", createdBy=" + createdBy + ", updatedDate=" + updatedDate
-				+ ", updatedBy=" + updatedBy + "]";
+		return "MenuWrapper [menuId=" + menuId + ", nama=" + nama + ", icon=" + icon + ", url=" + url + ", programName="
+				+ programName + ", createdDate=" + createdDate + ", createdBy=" + createdBy + ", updatedDate="
+				+ updatedDate + ", updatedBy=" + updatedBy + "]";
 	}
+	
+	
 	
 
 	

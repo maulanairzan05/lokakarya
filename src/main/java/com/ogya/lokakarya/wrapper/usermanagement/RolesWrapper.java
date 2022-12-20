@@ -78,11 +78,9 @@ public class RolesWrapper {
 	public String toString() {
 		return "RolesWrapper [roleId=" + roleId + ", nama=" + nama + ", programName=" + programName + ", createdDate="
 				+ createdDate + ", createdBy=" + createdBy + ", updatedDate=" + updatedDate + ", updatedBy=" + updatedBy
-				+ ", getRoleId()=" + getRoleId() + ", getNama()=" + getNama() + ", getProgramName()=" + getProgramName()
-				+ ", getCreatedDate()=" + getCreatedDate() + ", getCreatedBy()=" + getCreatedBy()
-				+ ", getUpdatedDate()=" + getUpdatedDate() + ", getUpdatedBy()=" + getUpdatedBy() + ", getClass()="
-				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+				+ "]";
 	}
+	
 
 
 	

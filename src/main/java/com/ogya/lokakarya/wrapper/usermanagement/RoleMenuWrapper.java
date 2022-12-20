@@ -4,15 +4,36 @@ import java.util.Date;
 
 
 public class RoleMenuWrapper {
+	private Long roleMenuId;
+	private Long roleId;
 	private Long menuId;
-	private String icon;
-	private String url;
+	private String isActive;
 	private String programName;
 	private Date createdDate;
 	private String createdBy;
 	private Date updatedDate;
 	private String updatedBy;
 	
+
+	public Long getRoleMenuId() {
+		return roleMenuId;
+	}
+	public void setRoleMenuId(Long roleMenuId) {
+		this.roleMenuId = roleMenuId;
+	}
+	//--------------------------------------------------------------------------------------------------------
+
+
+
+	public Long getRoleId() {
+		return roleId;
+	}
+	public void setRoleId(Long roleId) {
+		this.roleId = roleId;
+	}
+	//--------------------------------------------------------------------------------------------------------
+
+
 
 	public Long getMenuId() {
 		return menuId;
@@ -24,21 +45,11 @@ public class RoleMenuWrapper {
 
 
 
-	public String getIcon() {
-		return icon;
+	public String getIsActive() {
+		return isActive;
 	}
-	public void setIcon(String icon) {
-		this.icon = icon;
-	}
-	//--------------------------------------------------------------------------------------------------------
-
-
-
-	public String getUrl() {
-		return url;
-	}
-	public void setUrl(String url) {
-		this.url = url;
+	public void setIsActive(String isActive) {
+		this.isActive = isActive;
 	}
 	//--------------------------------------------------------------------------------------------------------
 
@@ -89,10 +100,11 @@ public class RoleMenuWrapper {
 	//--------------------------------------------------------------------------------------------------------
 	@Override
 	public String toString() {
-		return "MenuWrapper [menuId=" + menuId + ", icon=" + icon + ", url=" + url + ", programName=" + programName
-				+ ", createdDate=" + createdDate + ", createdBy=" + createdBy + ", updatedDate=" + updatedDate
-				+ ", updatedBy=" + updatedBy + "]";
+		return "RoleMenuWrapper [roleMenuId=" + roleMenuId + ", roleId=" + roleId + ", menuId=" + menuId + ", isActive="
+				+ isActive + ", programName=" + programName + ", createdDate=" + createdDate + ", createdBy="
+				+ createdBy + ", updatedDate=" + updatedDate + ", updatedBy=" + updatedBy + "]";
 	}
+	
 	
 
 	
