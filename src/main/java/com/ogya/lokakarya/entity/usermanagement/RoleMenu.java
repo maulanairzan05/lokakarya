@@ -7,60 +7,68 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
-@Table(name = "MENU")
-public class Menu {
-	private Long menuId;
-	private String nama;
-	private String icon;
-	private String url;
+@Table(name = "ROLE_MENU")
+public class RoleMenu {
+	private Long roleMenuId;
+	private Roles roles;
+	private Menu menu;
+	private String isActive;
 	private String programName;
 	private Date createdDate;
 	private String createdBy;
 	private Date updatedDate;
 	private String updatedBy;
 	
+	
 	@Id
-	@GeneratedValue(generator = "MENU_GEN", strategy = GenerationType.SEQUENCE)
-	@SequenceGenerator(name = "MENU_GEN", sequenceName = "MENU_SEQ", initialValue = 1, allocationSize = 1)
-	public Long getMenuId() {
-		return menuId;
+	@GeneratedValue(generator = "ROLE_MENU_GEN", strategy = GenerationType.SEQUENCE)
+	@SequenceGenerator(name = "ROLE_MENU_GEN", sequenceName = "ROLE_MENU_SEQ", initialValue = 1, allocationSize = 1)
+	public Long getRoleMenuId() {
+		return roleMenuId;
 	}
-	public void setMenuId(Long menuId) {
-		this.menuId = menuId;
+	public void setRoleMenuId(Long roleMenuId) {
+		this.roleMenuId = roleMenuId;
 	}
 	
 	//--------------------------------------------------------------------------------------------------------
-	@Column(name = "NAMA")
-	public String getNama() {
-		return nama;
+	@ManyToOne
+	@JoinColumn(name = "ROLE_ID")
+	@JsonIgnore
+	public Roles getRoles() {
+		return roles;
 	}
-	public void setNama(String nama) {
-		this.nama = nama;
+	public void setRoles(Roles roles) {
+		this.roles = roles;
 	}
-
 	
 	//--------------------------------------------------------------------------------------------------------
-	@Column(name = "ICON")
-	public String getIcon() {
-		return icon;
+	@ManyToOne
+	@JoinColumn(name = "MENU_ID")
+	@JsonIgnore
+	public Menu getMenu() {
+		return menu;
 	}
-	public void setIcon(String icon) {
-		this.icon = icon;
+	public void setMenu(Menu menu) {
+		this.menu = menu;
 	}
-
+		
 	//--------------------------------------------------------------------------------------------------------
-	@Column(name = "URL")
-	public String getUrl() {
-		return url;
+	@Column(name = "IS_ACTIVE")
+	public String getIsActive() {
+		return isActive;
 	}
-	public void setUrl(String url) {
-		this.url = url;
+	public void setIsActive(String isActive) {
+		this.isActive = isActive;
 	}
-
+	
 	//--------------------------------------------------------------------------------------------------------
 	@Column(name = "PROGRAM_NAME")
 	public String getProgramName() {
@@ -69,7 +77,7 @@ public class Menu {
 	public void setProgramName(String programName) {
 		this.programName = programName;
 	}
-
+	
 	//--------------------------------------------------------------------------------------------------------
 	@Column(name = "CREATED_DATE")
 	public Date getCreatedDate() {
@@ -78,7 +86,7 @@ public class Menu {
 	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
 	}
-
+	
 	//--------------------------------------------------------------------------------------------------------
 	@Column(name = "CREATED_BY")
 	public String getCreatedBy() {
@@ -87,7 +95,7 @@ public class Menu {
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
 	}
-
+	
 	//--------------------------------------------------------------------------------------------------------
 	@Column(name = "UPDATED_DATE")
 	public Date getUpdatedDate() {
@@ -106,7 +114,8 @@ public class Menu {
 		this.updatedBy = updatedBy;
 	}
 	
-}
+	
+	}
 
 
 
