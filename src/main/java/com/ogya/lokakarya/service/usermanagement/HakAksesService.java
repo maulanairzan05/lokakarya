@@ -54,8 +54,8 @@ public class HakAksesService {
 	}
 
 	public List<HakAksesWrapper> findAll() {
-		List<HakAkses> userList = hakAksesRepository.findAll(Sort.by(Order.by("hakAksesId")).ascending());
-		return toWrapperList(userList);
+		List<HakAkses> hakAksesList = hakAksesRepository.findAll(Sort.by(Order.by("hakAksesId")).ascending());
+		return toWrapperList(hakAksesList);
 	}
 
 	private HakAkses toEntity(HakAksesWrapper wrapper) {
